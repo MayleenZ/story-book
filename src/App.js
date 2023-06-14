@@ -10,6 +10,7 @@ import HomePage from './pages/HomePage'
 import { getUser } from './utilities/users-service';
 
 import './App.css';
+import Storybook from './pages/Storybook';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
      : 
       <AuthPage setUser={setUser}/>
       }
+      <Storybook></Storybook>
     </main>
   );
 }
