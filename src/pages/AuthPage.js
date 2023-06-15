@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import SignUpForm from "../components/SignUpForm/SignUp";
+import SignUpForm from "../components/SignUpForm/SignUpForm";
 import LoginForm from "../components/LoginForm";
 
 function AuthPage({ setUser }) {
@@ -9,7 +9,7 @@ function AuthPage({ setUser }) {
   return (
     <main className="AuthPage">
       <button onClick={() => setShowLogin(!showLogin)}>
-        {showLogin ? "Sign up" : "Sign in"}
+        {showLogin ? "Sign up here" : "Sign in here"}
       </button>
 
       {showLogin ? (

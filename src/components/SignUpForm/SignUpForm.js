@@ -12,8 +12,6 @@ function SignUpForm({setUser}) {
 
   const disable = formData.password !== formData.confirm;
 
-
-  console.log("New branch");
   
   const handleSubmit = async (e) => { 
     e.preventDefault(); 
@@ -27,7 +25,7 @@ function SignUpForm({setUser}) {
         password: formData.password
       }
       // returns a token with the user info
-      const user = await signUp(userData); // user service
+      const user = await signUp(userData); // users service
       setUser(user);
 
     } catch (error) {

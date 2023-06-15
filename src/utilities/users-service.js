@@ -30,6 +30,7 @@ export function getToken() {
 //* Get User
 export function getUser() {
     const token = getToken();
+    console.log("get user");
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
 
@@ -38,9 +39,10 @@ export function getUser() {
 export async function signUp(userData) {
      // Delegate the network request code to the users-api.js API module
     // which will ultimately return a JSON Web Token (JWT)
-    // console.log('[From SignUP function]', userData);
+    console.log('[From SignUP function]', userData);
     const token = await usersApi.signUp(userData);
     // saves token to localStorage
+    console.log("token user-service");
     localStorage.setItem('token', token);
     
     return getUser();

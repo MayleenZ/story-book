@@ -14,6 +14,10 @@ import './App.css';
 
 function App() {
   const [user, setUser] = useState(getUser());
+//   export function getUser() {
+//     const token = getToken();
+//     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
+// }
 
   return (
     <main className="App">

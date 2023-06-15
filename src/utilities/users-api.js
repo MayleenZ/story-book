@@ -11,6 +11,7 @@ const BASE_URL = '/api/users';
 
 //* SignUp
 export function signUp(userData) {
+  console.log("hello");
   return sendRequest(BASE_URL, 'POST', userData);
 }
 
@@ -36,7 +37,7 @@ async function sendRequest(url, method = 'GET', payload = null) {
     options.body = JSON.stringify(payload);
   }
 
-  // sends token to backend
+  // sends token to backend //users-service
   const token = getToken();
 
   if (token) {
