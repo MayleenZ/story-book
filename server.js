@@ -9,7 +9,10 @@ const app = express();
 
 // in production we'll a PORT number set in the environment variables
 
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 3001
+
+
+// process.env.PORT || 
 
 //* Config
 
