@@ -10,6 +10,7 @@ import * as usersApi from './users-api';
 export function getToken() {
     const token = localStorage.getItem('token');
     // if there is no token
+    console.log(token);
     if (!token) return null;
 
     const payload = JSON.parse(atob(token.split('.')[1]));
@@ -31,6 +32,7 @@ export function getUser() {
     const token = getToken();
     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
 }
+
 
 //* SignUp
 export async function signUp(userData) {

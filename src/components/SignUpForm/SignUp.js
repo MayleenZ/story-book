@@ -12,6 +12,9 @@ function SignUpForm({setUser}) {
 
   const disable = formData.password !== formData.confirm;
 
+
+  console.log("New branch");
+  
   const handleSubmit = async (e) => { 
     e.preventDefault(); 
     

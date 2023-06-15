@@ -1,5 +1,5 @@
 //* Request handler Logic
-const User = require('../../models/user');
+const User = require('../../models/user')
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
