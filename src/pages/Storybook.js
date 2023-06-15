@@ -1,7 +1,5 @@
-/* eslint-disable react/no-unknown-property */
-/* eslint-disable react/jsx-filename-extension */
-import { Canvas, useFrame } from '@react-three/fiber';
-import React, { useRef } from 'react';
+import { Canvas, useFrame } from "@react-three/fiber";
+import React, { useRef } from "react";
 
 function Box() {
   const myMesh = useRef();

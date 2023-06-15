@@ -1,16 +1,15 @@
-/* eslint-disable react/jsx-filename-extension */
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-import { Routes, Route } from 'react-router-dom';
-import AuthPage from './pages/AuthPage';
-import NavBar from './components/NavBar';
+import { Routes, Route } from "react-router-dom";
+import AuthPage from "./pages/AuthPage";
+import NavBar from "./components/NavBar";
 
-import HomePage from './pages/HomePage';
+import HomePage from "./pages/HomePage";
 
-import { getUser } from './utilities/users-service';
+import { getUser } from "./utilities/users-service";
 
-import './App.css';
-import Storybook from './pages/Storybook';
+import "./App.css";
+import Storybook from "./pages/Storybook";
 
 function App() {
   const [user, setUser] = useState(getUser());
