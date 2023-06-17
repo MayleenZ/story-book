@@ -4,12 +4,13 @@ import SignUpForm from "../components/SignUpForm/SignUpForm";
 import LoginForm from "../components/LoginForm";
 
 function AuthPage({ setUser }) {
+  //setUser function that updates user is passed down from App.js 
   const [showLogin, setShowLogin] = useState(true);
 
   return (
     <main className="AuthPage">
       <button onClick={() => setShowLogin(!showLogin)}>
-        {showLogin ? "Sign up here" : "Sign in here"}
+        {showLogin ? "Click here to Sign up " : "Click here to login"}
       </button>
 
       {showLogin ? (

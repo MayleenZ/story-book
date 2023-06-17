@@ -1,7 +1,8 @@
-function HomePage(){
+function HomePage({user}){
+    console.log(user);
     return(
         <div>
-            <p>Welcome</p>
+            <p>Welcome {user.name}</p>
         </div>
     )
 }
