@@ -1,12 +1,28 @@
+import { useState } from "react"
 
-export function CharacterForm(){
+
+export function CharacterForm({user}){
+    console.log(`character form ${user}`);
+
+    const [character, setCharacter] = useState({
+        image: "",
+        name: "",
+        age: "",
+        background: "",
+        hobbies: ""
+    })
+
+
     return (
         <div>
-            <label>Image:</label>
-            <label>Name:</label>
-            <label>Age:</label>
-            <label>Background:</label>
-            <label>Hobbies:</label>
+            <form>
+            <label>Image:</label> <input type= "text" name="image"/>
+            <label>Name:</label><input type = "text" name = "name"/>
+            <label>Age:</label><input type ="number" name = "age"/>
+            <label>Background:</label><input type = "text" name = "background"/>
+            <label>Hobbies:</label><input type="text" name="hobbies"/>
+            <button type = "submit">Submit</button>
+            </form>
         </div>
     )
 }

@@ -1,4 +1,4 @@
-    function AllCharacters(){
+    function AllCharacters({user}){
         return (
             <div>
 
