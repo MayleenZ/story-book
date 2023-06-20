@@ -7,24 +7,44 @@ import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage'
 
 
-import { getUser } from './utilities/users-service';
+// import { getUser } from './utilities/users-service';
 //used to initilaize the user state
 
 import './App.css';
 
 
 function App() {
+  function getToken() {
+        const token = localStorage.getItem('token');
+        // if there is no token
+        console.log(token);
+        if (!token) return null;
+    
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        console.log(payload);
+    
+        // if token is expired
+        if (payload.exp < Date.now() / 1000) {
+            localStorage.removeItem('token');
+            return null;
+        }
+    
+        // token is valid
+        return token;
+    
+    }
+  function getUser() {
+        const token = getToken();
+        console.log("get user");
+        return token ? JSON.parse(atob(token.split('.')[1])).user : null;
+    }
   const [user, setUser] = useState(getUser()); 
   //the user is initialized with the getUser() function , meaning if getUser return user object is it a truthy value 
 
 
   //getUser() retrieves user data from a token stored in browsers local storage 
   //*the getUser function decodes the token to extract the user information and return it
-  //From utilities/ users-service
-//   export function getUser() {
-//     const token = getToken();
-//     return token ? JSON.parse(atob(token.split('.')[1])).user : null;
-// }
+
 
   return (
     <main className="App">

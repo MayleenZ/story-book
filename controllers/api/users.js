@@ -4,6 +4,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 
 //* /*-- Helper Functions --*/
+
+//create JWT using user prop passed down from app.js
 function createJWT(user) {
     return jwt.sign({user}, process.env.SECRET, {expiresIn: '24h'});
 }
@@ -45,10 +47,12 @@ async function login(req, res) {
     }
   }
 
-
+//asynchronous function, takes in req and res params, standard objects by express for handling HTTP req and res. 
+//Used in routes/api/users.js ->  router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
 async function checkToken(req, res) {
-    console.log(req.user);
     res.json(req.exp)
+    //sends json response to client with value of req.exp (expiration time of token)
+    //determine if token is valid or expired
 }
 
 

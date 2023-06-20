@@ -8,9 +8,25 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 //* POST
 
-router.post('/', usersCtrl.create);
-router.post('/login', usersCtrl.login)
-router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
 
+// function ensureLoggedIn(req, res, next) {
+    // //Status code of 401 is Unauthorized
+//     if (!req.user) return res.status(401).json('Unauthorized');
+//     // A okay
+//     next();
+//   };
+
+// async function checkToken(req, res) {
+//     res.json(req.exp)
+// }
+
+router.post('/', usersCtrl.create);
+// when post request made to path '/', create method from users control is invoked , 
+router.post('/login', usersCtrl.login)
+
+
+
+router.get('/check-token', ensureLoggedIn, usersCtrl.checkToken)
+//checks validity of token when get request is made. middleware ensureLoggedIn is invoked to see if user is logged in, if user is logged in, then checkToken will handle the request 
 
 module.exports = router;

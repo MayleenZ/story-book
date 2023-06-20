@@ -22,8 +22,8 @@ app.use(logger("dev"));
 app.use(cors());
 app.use(express.json());
 
-// checks if token was sent and sets a user data on the req (req.user)
 
+//used globally across the express app, by putting it here as a middleware function with app.use.. it is registering the middleware to be executed on every incoming request 
 app.use(require("./config/checkToken"));
 
 // * All other routes
