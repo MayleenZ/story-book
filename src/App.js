@@ -7,11 +7,9 @@ import NavBar from './components/NavBar';
 import HomePage from './pages/HomePage'
 
 
-// import { getUser } from './utilities/users-service';
-//used to initilaize the user state
-
 import './App.css';
-
+import CharacterPage from './pages/CharacterPage';
+import AllCharacters from './pages/AllCharacters';
 
 function App() {
   function getToken() {
@@ -57,6 +55,8 @@ function App() {
       <Routes>
         <Route path='/' element={ <HomePage user={user} /> }/>
         {/* can customize homepage with user data */}
+        <Route path = '/create-character' element = {<CharacterPage user = {user} />}/>
+        <Route path = "/all-characters" element = {<AllCharacters user = {user}/>}/>
       </Routes>
       </>
      : 

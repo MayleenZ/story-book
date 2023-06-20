@@ -15,6 +15,10 @@ function NavBar({ user, setUser }) {
     <nav id="nav-bar">
       <Link to="/">Home</Link>
       &nbsp; | &nbsp;
+      <Link to = "/create-character">Character Creation</Link>
+      &nbsp; | &nbsp;
+      <Link to = "/all-characters">All Characters</Link>
+      &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>
         Logout
       </Link>
