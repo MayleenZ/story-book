@@ -1,10 +1,10 @@
 import { CharacterForm } from "../components/CharacterForm"
 
 
-function CharacterPage({user}){
+function CharacterPage({user, createCharacter, character, updateCharacter}){
     return (
         <div>
-            <CharacterForm user = {user}/>
+            <CharacterForm user = {user} character={character} updateCharacter={updateCharacter} createCharacter={createCharacter}/>
         </div>
     )
 }

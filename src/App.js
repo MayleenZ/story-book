@@ -31,7 +31,6 @@ function App() {
   }
   function getUser() {
     const token = getToken();
-    console.log("get user");
     return token ? JSON.parse(atob(token.split(".")[1])).user : null;
   }
   const [user, setUser] = useState(getUser());
@@ -41,6 +40,7 @@ function App() {
   //*the getUser function decodes the token to extract the user information and return it
 
   const [character, setCharacter] = useState(null);
+  //setting these to be used in the functions that are passed down as props to child components 
 
   //saved characterData and updates it to useState
   function createCharacter(characterData) {

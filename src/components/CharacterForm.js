@@ -1,35 +1,73 @@
-import { useState } from "react"
+import { useState } from "react";
 
+export function CharacterForm({
+  user,
+  createCharacter,
+  character,
+  updateCharacter,
+}) {
+  //createCharacter and updateCharacter are setter functions
 
-export function CharacterForm({user}){
-    console.log(`character form ${user}`);
+  const [characterFormData, setCharacterFormData] = useState({
+    image: "",
+    name: "",
+    age: "",
+    background: "",
+    hobbies: "",
+  });
 
-    const [character, setCharacter] = useState({
-        image: "",
-        name: "",
-        age: "",
-        background: "",
-        hobbies: ""
-    })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
+  const handleChange = (e) => {
+    const {name, value} = e.target;
+    //same as e.target.name and e.target.value
+    console.log(name, value);
+    setCharacterFormData((prevData) => ({
+        ...prevData,
+        [name] : value
+    }))
+  };
 
-    return (
-        <div>
-            <form>
-            <label>Image:</label> <input type= "text" name="image"/>
-            <label>Name:</label><input type = "text" name = "name"/>
-            <label>Age:</label><input type ="number" name = "age"/>
-            <label>Background:</label><input type = "text" name = "background"/>
-            <label>Hobbies:</label><input type="text" name="hobbies"/>
-            <button type = "submit">Submit</button>
-            </form>
-        </div>
-    )
+  const handleEdit=()=> {
+
+  }
+
+  const handleClear = () => {
+    setCharacterFormData({
+      image: "",
+      name: "",
+      age: "",
+      background: "",
+      hobbies: ""
+    });
+  };
+
+  return (
+    <div>
+      <form onSubmit={handleSubmit} onChange={handleChange} onClick={handleClear}>
+        <label>Image:</label> 
+        <input type="text" name="image" value = {characterFormData.image} />
+
+        <label>Name:</label>
+        <input type="text" name="name" value={characterFormData.name} />
+
+        <label>Age:</label>
+        <input type="number" name="age" value={characterFormData.age}  />
+
+        <label>Background:</label>
+        <input type="text" name="background" value={characterFormData.background} />
+
+        <label>Hobbies:</label>
+        <input type="text" name="hobbies" value={characterFormData.hobbies} />
+
+        <button type="submit">Submit</button>
+      <button onClick={handleClear}>Clear</button>
+      </form>
+      <button >Edit</button>
+    </div>
+  );
 }
 
 
-//- image (url string)
-// - name (string)
-// - age (number)
-// - background (string)
-// - hobbies [array of strings]
