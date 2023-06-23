@@ -1,7 +1,8 @@
-    function AllCharacters({user}){
+    function AllCharacters({user, character}){
+        console.log(user, character);
         return (
             <div>
-
+                
             </div>
         )
     }

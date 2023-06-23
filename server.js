@@ -29,6 +29,7 @@ app.use(require("./config/checkToken"));
 // * All other routes
 
 app.use("/api/users", require("./routes/api/users"));
+app.use("/api/characters", require("./routes/api"))
 
 // app.use('/api/users/login', require('./routes/api/users'))
 
