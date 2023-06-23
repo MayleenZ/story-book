@@ -1,6 +1,6 @@
 const Character = require("../../models/characters")
 
-//* This file communicates with the mongoDB using mongoose keywords such as create, findbyID and so on, communicates with mongoDB requires an async await as it is connecting through an API. Parsing the data into json. Requesting mongoDB and receiving a response 
+//* This file communicates with the mongoDB using mongoose keywords such as create, findbyID and so on, communicating with mongoDB requires an async await as it is connecting through an API. Parsing the data into json. Requesting mongoDB and receiving a response 
 
 
 async function createCharacter(req,res){

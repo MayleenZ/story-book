@@ -10,9 +10,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 
 // function ensureLoggedIn(req, res, next) {
-    // //Status code of 401 is Unauthorized
 //     if (!req.user) return res.status(401).json('Unauthorized');
-//     // A okay
 //     next();
 //   };
 
@@ -22,6 +20,7 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 router.post('/', usersCtrl.create);
 // when post request made to path '/', create method from users control is invoked , 
+
 router.post('/login', usersCtrl.login)
 
 
